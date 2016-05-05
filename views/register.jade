@@ -1,0 +1,51 @@
+!!! 5
+html
+  head
+    link(rel='stylesheet', type='text/css', href='../stylesheets/registration.css', media='all')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/registercheck.js")
+  body
+    .container
+      .page-top
+        a(href='../') Back to Home
+      header
+        h1 Pennterest Registration Form
+      .form
+        form#contactform
+          p.contact
+            label Username (*)
+          input#username(name='login', placeholder='username', required='required', type='text')
+          p.contact
+            label First Name(*)
+          input#firstName(name='givenname', placeholder='First name', required='required', type='text')
+          p.contact
+            label Last Name(*)
+          input#lastName(name='surname', placeholder='Last name', required='required', type='text')
+          p.contact
+            label Create a password (*)
+          input#password(type='password', placeholder='Input your password', name='password', required='required')
+          p.contact
+            label Confirm your password (*)
+          input#repassword(type='password', placeholder='Input your password', name='repassword', required='required')
+          p.contact
+            label Email Address (*)
+          input#email(name='email', placeholder='example@domain.com', required='required', type='email')
+          p.contact
+            label Affiliation
+          input#affiliation(name='affiliation', placeholder='upenn,seas', required='required', type='text')
+          p.contact
+            label Interests
+          input#interests(name='interests', placeholder='music,sports', required='required', type='text')
+          p.contact
+            label Your Gender
+          input#select(type='radio', name='gender', value='F', checked='checked')
+          | F
+          input(type='radio', name='gender', value='M')
+          | M
+          p.contact
+            label Birthday Day :
+          input#birth(type='text', name='bday', placeholder='MM-DD-YYYY', required='required')
+          p.contact
+          input#submit.register(value='Sign up!', type='submit')
+      // end of form><
+    // end of container><

@@ -1,0 +1,171 @@
+    1  sudo ldconfig
+    2  mongo
+    3  cd PennInterest/
+    4  npm install
+    5  mongo
+    6  ls
+    7  vi .profile 
+    8  source .profile 
+    9  ls
+   10  sudo apt-get install nodejs
+   11  sudo apt-get install npm
+   12  sudo apt-get update
+   13  sudo apt-get install python-software-properties python g++ make
+   14  mongo
+   15  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+   16  sudo apt-get install mongodb-clients
+   17  cd $OCI_LIB_DIR
+   18  ln -s libclntsh.so.12.1 libclntsh.so
+   19  cat /etc/ld.so.conf.d/oracle_instant_client.conf
+   20  sudo vi /etc/ld.so.conf.d/oracle_instant_client.conf
+   21  ldconfig
+   22  sudo ldconfig
+   23  sudo apt-get install libaio
+   24  echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+   25  sudo apt-get update
+   26  sudo apt-get install mongodb-10gen
+   27  apt-get install mongodb-10gen=2.2.3
+   28  sudo apt-get install mongodb-10gen=2.2.3
+   29  echo "mongodb-10gen hold" | sudo dpkg --set-selections
+   30  sudo rm /var/lib/mongodb/mongod.lock 
+   31  mongo
+   32  sudo -u mongodb mongod -f /etc/mongodb.conf
+   33  sudo service mongod start
+   34  sudo service mongodb start
+   35  sudo apt-get install mongodb-clients
+   36  mongo
+   37  sudo rm /var/lib/mongodb/mongod.lock
+   38  sudo apt-get install mongodb-server
+   39  mongo
+   40  sudo -u mongodb mongod -f /etc/mongodb.conf
+   41  sudo -u mongodb mongod -f /etc/mongodb.conf --repair
+   42  sudo -u mongodb mongod -f /etc/mongodb.conf
+   43  sudo service mongodb start
+   44  mongo
+   45  sudo apt-get install libaio
+   46  sudo service mongodb restart
+   47  mong
+   48  sudo service mongodb stop
+   49  sudo rm /var/lib/mongodb/mongod.lock
+   50  sudo -u mongodb mongod -f /etc/mongodb.conf
+   51  mongo
+   52  sudo rm /var/lib/mongodb/mongod.lock
+   53  sudo service mongodb restart
+   54  mongo
+   55  sudo service mongodb stop
+   56  sudo rm /var/lib/mongodb/mongod.lock
+   57  sudo chown -R mongodb:mongodb /var/lib/mongodb/
+   58  sudo service mongodb start
+   59  mongo
+   60  vim /etc/mongodb.conf
+   61  ls
+   62  cd PennInterest/
+   63  ls
+   64  NODE_ENV=production nodejs app.js 
+   65  nodejs app.js 
+   66  npm install
+   67  vi /home/ubuntu/.profile 
+   68  cd ~
+   69  ls
+   70  cd instantclient/
+   71  ls
+   72  vi /etc/ld.so.conf.d/oracle_instant_client.conf
+   73  cd ~
+   74  cd $OCI_LIB_DIR
+   75  ln -s libclntsh.so.12.1 libclntsh.so
+   76  ln -s libocci.so.12.1 libocci.so
+   77  sudo ldconfig
+   78  cd ~/PennInterest/
+   79  ls
+   80  nodejs app.js 
+   81  cd ~
+   82  sudo npm install oracle
+   83  sudo apt-get install nodejs
+   84  sudo apt-get install libaio
+   85  export OCI_HOME=/home/ubuntu/instantclient
+   86  export OCI_LIB_DIR=$OCI_HOME
+   87  echo $OCI_VERSION
+   88  export NLS_LANG=AMERICAN_AMERICA.UTF8
+   89  jls
+   90  ls
+   91  cd PennInterest/
+   92  ls
+   93  vi package.json 
+   94  cd node_modules/
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd ~
+   99  ls
+  100  cd node_modules/
+  101  ls
+  102  cd ..
+  103  ls
+  104  cd node_modules/
+  105  ls
+  106  cd ~
+  107  cd PennInterest/
+  108  nodejs app.js 
+  109  cd..
+  110  cd 
+  111  sudo apt-get install libaio
+  112  cd PennInterest/
+  113  ls
+  114  nodejs app.js 
+  115  top
+  116  killall node
+  117  ps aux | grep node
+  118  kill 11495
+  119  nodejs app.js 
+  120  top
+  121  cd PennInterest/
+  122  vim routes/addInterest.js 
+  123  vim views/profile.jade 
+  124  vim public/javascripts/interestform.js 
+  125  vim public/javascripts/friendform.js 
+  126  vim public/javascripts/interestform.js 
+  127  vim routes/addFriend.js 
+  128  vim views/profile.jade 
+  129  vim routes/addBoard.js 
+  130  vim views/profile.jade 
+  131  ls
+  132  vim views/addcontent.jade 
+  133  vim views/usercontent.jade 
+  134  vim views/boards.jade 
+  135  vim views/searchResults.jade
+  136  vim public/javascripts/b.js 
+  137  vim views/oneBoard.jade 
+  138  vim public/javascripts/friendform.js 
+  139  vim public/javascripts/boardform.js 
+  140  vim public/javascripts/interestform.js 
+  141  vim public/javascripts/boardform.js 
+  142  vim views/boards.jade 
+  143  vim public/javascripts/boardform.js 
+  144  vim routes/recommend.js 
+  145  vim views/register.jade 
+  146  vim public/stylesheets/profile.css 
+  147  vim public/stylesheets/boards.css 
+  148  cd PennInterest/
+  149  ls
+  150  vim routes/register.js 
+  151  mongo
+  152  sudo rm /var/lib/mongodb/mongod.lock
+  153  sudo service mongodb 
+  154  sudo service mongodb restart
+  155  mongo
+  156  history | grep scp
+  157  ls
+  158  sudo apt-get install libaio1
+  159  cd PennInterest/
+  160  nodejs app.js 
+  161  exit
+  162  top
+  163  ifconfig
+  164  ls
+  165  sudo apt-get install zip
+  166  zip PennInterest.zip PennInterest/
+  167  ls
+  168  zip -r  PennInterest.zip PennInterest/
+  169  ls
+  170  history &> history.txt
+ssh -i ~/.ec2/login.pem ubuntu@ec2-54-209-181-22.compute-1.amazonaws.com

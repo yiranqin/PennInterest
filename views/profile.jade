@@ -1,0 +1,88 @@
+!!! 5
+html
+  head
+    link(rel='stylesheet', type='text/css', href='../stylesheets/profile.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/friendform.js")
+    script(src="/javascripts/interestform.js")
+  body
+    #redirect
+      form(id='redirect', method='get')
+        button#redir(type='submit', value='Home', formaction='/recommend') Home
+        button#redir(type='submit', value='My Profile', formaction='/userProfile') My Profile
+        button#redir(type='submit', value='My Boards', formaction='/userBoards') My Boards
+        button#redir(type='submit', value='My Content', formaction='/userContents') My Content
+        button#redir(type='submit', value='Logout', formaction='/logout') Logout
+    .holder
+      br
+      br
+    .left
+      .profileForm
+        .profileText
+          label
+            | Welcome to 
+            label#userProfile #{userInfo[0].USERID}
+            label
+              | 's Profile
+        p.list
+          label.listContent User Name: 
+          label#UserName=userInfo[0].USERID
+        p.list
+          label.listContent First Name:  
+          label#FirstName=userInfo[0].GIVENNAME
+        p.list
+          label.listContent Last Name: 
+          label#LastName=userInfo[0].SURNAME
+        p.list
+          label.listContent Affiliation: 
+          label#Affiliation=userInfo[0].AFFILIATION
+        p.list
+          label.listContent Birthday: 
+          label#Birthday=userInfo[0].BIRTHDAY
+        p.list
+          label.listContent Email:
+          label#Email=userInfo[0].EMAIL
+        p.list
+          label.listContent Gender: 
+          label#Gender=userInfo[0].GENDER
+      .addFriend
+        label.friendheading Do you want to add a friend?
+        br
+        input#inputFriend(type='text', placeholder="Input your friend's username here!", required='required')
+        input#submitFriend(type='button', value='Submit')
+      br
+      .addInterest
+        label.interestheading Do you want to add an interest? 
+        br
+        input#inputInterest(type='text', placeholder='Input your new interest here!', required='required')
+        input#submitInterest(type='button', value='Submit')
+    .friends
+      table#interestTable
+        tr.one
+          td
+            label Interests
+        - for(var ind = 0; ind < userInterests.length; ind++)
+            tr
+              td
+                label#userInterests=userInterests[ind].AREA
+    .friends
+      table#friendTable
+        tr.two
+          td
+            label Friends
+        - for(var ind = 0; ind < userFriends.length; ind++)
+            tr
+              td
+                label#userFriends=userFriends[ind].FRIENDID
+    .friends
+      table#recfriendTable
+        tr.three
+          td
+            label Recommended Friends
+        - for(var ind = 0; ind < peopleWithSameInterests.length; ind++)
+            tr
+              td
+                label#peopleWithSameInterests=peopleWithSameInterests[ind].USERID
+
+        
+

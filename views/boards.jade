@@ -1,0 +1,46 @@
+!!! 5
+html
+  head
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/boardform.js")
+    link(rel='stylesheet', type='text/css', href='../stylesheets/boards.css')
+  body
+    #redirect
+      form(id='redirect', method='get')
+        button#redir(type='submit', value='Home', formaction='/recommend') Home
+        button#redir(type='submit', value='My Profile', formaction='/userProfile') My Profile
+        button#redir(type='submit', value='My Boards', formaction='/userBoards') My Boards
+        button#redir(type='submit', value='My Content', formaction='/userContents') My Content
+        button#redir(type='submit', value='Logout', formaction='/logout') Logout
+    .holder
+      br
+      br
+    .profileForm
+      .profileText
+        label
+          | Welcome to 
+          label#userProfile #{user}
+          //add method to get login
+          label
+            | 's Boards
+    // End of profile><
+    p.text3  These are my boards :
+    .board#boards
+      - for(i = 0; i < boardresults.length; i++)
+        #boardList
+          label#header For board
+          label#board.text2=boardresults[i].BOARDNAME
+          form#boardForm(method='get', action='/userBoardContents')
+            input#name(value=boardresults[i].BOARDNAME, type='hidden', name='boardName')
+            input(type='submit',class = "clickme", value='Click to view')
+    // End of a new board!
+    .changeInterest
+      div
+        p
+        label.changeTitle Do you want to create a new board? 
+        div       
+          input#inputBoard(type='text', placeholder='Input a new board name!', name='newBoardName', required='required')
+          input#inputBoardType(type='text', placeholder='Input a new board type!', name='boardType')
+          input#subButton(type='button', value='Submit!')
+          h2#results
+            

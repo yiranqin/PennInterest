@@ -1,0 +1,265 @@
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,hgroup,
+header,menu,nav,section,footer { 
+	display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+
+a {
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 20px;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*
+    BACKGROUND STYLES
+*/
+
+html {
+    background-color:#none;
+  
+}
+
+body {
+	color: #F06;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 14px;
+	line-height: 10px;
+}
+
+header {
+    background-color:#383838;
+background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+background: linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    margin-bottom:10px;
+    overflow:visible;
+}
+
+#header_middle .container {
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+
+
+
+
+/*
+    GENERIC STYLES
+*/
+
+h1, h2 { clear:both; }
+
+h1 {
+	margin:15px 5px;
+	padding-top:15px;
+	color:#333;
+	font-size:35px;
+	font-weight:100;
+	line-height: 20px;
+	
+	
+}
+
+h2 {
+    margin:15px 0px;
+	padding-top:15px;
+    color:#333;
+    font-size:20px;
+    font-weight:300;
+}
+
+p {
+    color:#333;
+	margin-bottom: 15px;
+}
+
+a {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+	outline: none;
+}
+
+
+	
+#intro {
+	width: 980px;
+	position: relative;
+	float: left;
+	height: 120px;
+	background: transparent;
+	margin-top: 25px;
+}
+
+#logo {
+	position: relative;
+	float: left;
+	left: 200px;
+	width: 100px;
+	height: 100px;
+	top: 32px;
+}
+
+/*
+    LIST STYLES
+*/
+
+ol { margin-left:20px; }
+
+ul { margin-bottom:20px; clear:both; }
+
+ul li { list-style:none; }
+
+.circle{ list-style:circle;}
+.squares{ list-style:square;}
+/*
+	HEADER STYLES
+*/
+
+
+
+nav {
+    position:absolute;
+    top:50px;
+    right:0px;
+	list-style:none;
+	z-index:10;
+}
+
+nav ul {
+	overflow:visible;
+}
+
+nav ul li {
+	position:relative;
+	float:left;
+	margin-left:10px;
+}
+
+nav ul li a {
+	display:block;
+	float:left;
+	padding:2px 5px;
+	margin-bottom:3px;
+	color:#333;
+	font-family:helvetica,arial,serif;
+	line-height:20px;
+	font-size:20px;
+	
+}
+
+
+
+nav ul li a:hover, nav ul li a.selected{
+	color:#930000;
+	background:none;
+	text-decoration:none;
+	text-shadow:none;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+}
+
+
+
+
+
+#header_main #secondary {
+    position:relative;
+    padding:20px 0px;
+    background:none;
+}
+
+
+#header_main #secondary #slogan p.text1 {
+	margin-bottom:10px;
+    color:#333;
+    font-size:35px;
+	font-family:helvetica, arial, serif;
+	letter-spacing:-1px;
+}
+
+
+
+ul#header_menu {
+    padding-top:34px;
+	margin:0px;
+	line-height:30px;
+}
+
+ul#header_menu li { float:left; margin-right:20px; }
+
+ul#header_menu li a {
+	padding:7px 15px 6px 15px;
+	background:#282828;
+    color:#f4f4f4;
+    font-family:helvetica, arial, sans-serif;
+    font-size:12px;
+	font-weight:bold;
+	text-transform:uppercase;
+    text-decoration:none;
+    
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	
+	border:#222 solid 1px;
+}
+
+ul#header_menu li a:hover {
+	background:#b22222;
+    text-decoration:none;
+}
+
+
+/*
+	CONTENT STYLES
+*/
+
+.container {
+    margin:0px auto;
+    padding:0px;
+    width:100%;
+    position:relative;
+}
+
+

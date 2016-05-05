@@ -1,0 +1,143 @@
+!!! 5
+html
+  head
+    title Home Page
+    link(rel='stylesheet', type='text/css', href='../stylesheets/home.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/pinit.js")
+    script(src="/javascripts/loadtag.js")
+    script(src="/javascripts/updaterating.js")
+    script(src="/javascripts/newtag.js")
+  body
+    #redirect
+      form(id='redirect', method='get')
+        button#redir(type='submit', value='My Profile', formaction='/userProfile') My Profile
+        button#redir(type='submit', value='My Boards', formaction='/userBoards') My Boards
+        button#redir(type='submit', value='My Boards', formaction='/userContents') My Content
+        button#redir(type='submit', value='My Boards', formaction='/logout') Logout
+    .holder
+      br
+      br
+    .welcome
+      label Welcome to 
+      label#username=user
+      label 's Home Page
+    .search
+      .searchblock
+        label Enter your query here!
+        br
+        form#searchform(method='get', action='/search')
+          input#searchfield(type="text", placeholder="Please enter a keyword", name='keyword')  
+          input#searchbutton(type="submit", value="Search!")
+      p
+      p
+    .title1
+      label Recommended contents
+    // Start of content block
+    .recommendedBlock
+    - for (i = 0; i < 9; i++)
+      .contentBlock
+        #imagecontainer
+          iframe(id=i, src=results[i].URL, style="max-width:400px; max-height:300px")
+          br
+          label(id=i + "source") Source of content: 
+          label.text=results[i].SOURCEID
+          br
+          label(id=i + "tags")
+          #newtags
+            label(id= i + "firstupdate")
+          label(id=i + "avgrating") Average rating: 
+          label(id=i + "newrating") #{results[i].AVGSCORE}
+          br
+          input(id=i + "resultTags", type='hidden', value=results[i].TAGS)
+          input(id=i + "objID", type='hidden', value=results[i].OBJECTID)
+          input(id=i + "srcID", type='hidden', value=results[i].SOURCEID)
+          script.
+            loadTags(#{i});
+        br
+        .rate
+          form(id='rateButton' + i, value=i, onsubmit="updateRating(#{i}); return false;")
+            .radio(id = i + 'radioDiv')
+              input#select(type='radio', name='rateValue', value='1', checked='checked')
+              | 1
+              input(type='radio', name='rateValue', value='2')
+              | 2
+              input(type='radio', name='rateValue', value='3')
+              | 3
+              input(type='radio', name='rateValue', value='4')
+              | 4
+              input(type='radio', name='rateValue', value='5')
+              | 5
+            input#pinID.button2(type='submit', value='Rate it')
+        br
+        .tag
+          label.text Add a tag to this content!
+          form(name='tagButton', onsubmit='addtag(#{i}); return false;')
+            input(id=i + "tag", type='text', placeholder='Enter tags separated by commas')
+            br
+            input#pinID.button2(type='submit', value='Tag it')
+        br
+        .pin
+          label.text If you like it, just click the pin button!
+          form(name='pinButton', method='get', action='/renderPinPage')
+            input(type='hidden', name='pinobjectID', value=results[i].OBJECTID)
+            input(type='hidden', name='pinsourceID', value=results[i].SOURCEID)
+            input(type='hidden', name='url', value=results[i].URL)
+            input#pinID.button2(type='submit', value='Pin it')
+        p
+    .title1
+      label Randomly selected contents
+    .randomBlock
+    - for (i = 12; i < 21; i++)
+      .contentBlock
+        #imagecontainer
+          iframe(id=i, src=results[i].URL, style="max-width:400px; max-height:300px")
+          br
+          label(id=i + "source") Source of content: 
+          label.text=results[i].SOURCEID
+          br
+          label(id=i + "tags")
+          #newtags
+            label(id= i + "firstupdate")
+          label(id=i + "avgrating") Average rating: 
+          label(id=i + "newrating") #{results[i].AVGSCORE}
+          br
+          input(id=i + "resultTags", type='hidden', value=results[i].TAGS)
+          input(id=i + "objID", type='hidden', value=results[i].OBJECTID)
+          input(id=i + "srcID", type='hidden', value=results[i].SOURCEID)
+          script.
+            loadTags(#{i});
+        br
+        .rate
+          form(id='rateButton' + i, value=i, onsubmit="updateRating(#{i}); return false;")
+            .radio(id = i + 'radioDiv')
+              input#select(type='radio', name='rateValue', value='1', checked='checked')
+              | 1
+              input(type='radio', name='rateValue', value='2')
+              | 2
+              input(type='radio', name='rateValue', value='3')
+              | 3
+              input(type='radio', name='rateValue', value='4')
+              | 4
+              input(type='radio', name='rateValue', value='5')
+              | 5
+            input#pinID.button2(type='submit', value='Rate it')
+        br
+        .tag
+          label.text Add a tag to this content!
+          form(name='tagButton', onsubmit='addtag(#{i}); return false;')
+            input(id=i + "tag", type='text', placeholder='Enter tags separated by commas')
+            br
+            input#pinID.button2(type='submit', value='Tag it')
+        br
+        .pin
+          label.text If you like it, just click the pin button!
+          form(name='pinButton', method='get', action='/renderPinPage')
+            input(type='hidden', name='pinobjectID', value=results[i].OBJECTID)
+            input(type='hidden', name='pinsourceID', value=results[i].SOURCEID)
+            input(type='hidden', name='url', value=results[i].URL)
+            input#pinID.button2(type='submit', value='Pin it')
+        p
+    
+        
+

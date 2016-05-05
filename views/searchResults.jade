@@ -1,0 +1,153 @@
+!!! 5
+html
+  head
+    title Search Result
+    link(rel='stylesheet', type='text/css', href='../stylesheets/searchResult.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/pinit.js")
+    script(src="/javascripts/loadtag.js")
+    script(src="/javascripts/updaterating.js")
+    script(src="/javascripts/newtag.js")
+    script(src="/javascripts/triggersearch.js")
+  body
+    label#test
+    #redirect
+      form(id='redirect', method='get')
+        button#redir(type='submit', value='Home', formaction='/recommend') Home
+        button#redir(type='submit', value='My Profile', formaction='/userProfile') My Profile
+        button#redir(type='submit', value='My Boards', formaction='/userBoards') My Boards
+        button#redir(type='submit', value='My Content', formaction='/userContents') My Content
+        button#redir(type='submit', value='Logout', formaction='/logout') Logout
+    .welcome
+      label This is the result for your search for: 
+      label#keyword #{keyword}
+    div.databaseBlock
+      - for (i = 0; i < results.length; i++)
+        .contentBlock
+          #imagecontainer
+            iframe(id=i, src=results[i].URL, style="max-width:400px; max-height:300px")
+            br
+            label(id=i + "source") Source of content: 
+            label.text=results[i].SOURCEID
+            br
+            label(id=i + "tags")
+            #newtags
+              label(id= i + "firstupdate")
+            label(id=i + "avgrating") Average rating: 
+            label(id=i + "newrating") #{results[i].AVGSCORE}
+            br
+            input(id=i + "resultTags", type='hidden', value=results[i].TAGS)
+            input(id=i + "objID", type='hidden', value=results[i].OBJECTID)
+            input(id=i + "srcID", type='hidden', value=results[i].SOURCEID)
+            script.
+              loadTags(#{i});
+          br
+          .rate
+            form(id='rateButton' + i, value=i, onsubmit="updateRating(#{i}); return false;")
+              .radio(id = i + 'radioDiv')
+                input#select(type='radio', name='rateValue', value='1', checked='checked')
+                | 1
+                input(type='radio', name='rateValue', value='2')
+                | 2
+                input(type='radio', name='rateValue', value='3')
+                | 3
+                input(type='radio', name='rateValue', value='4')
+                | 4
+                input(type='radio', name='rateValue', value='5')
+                | 5
+              input#pinID.button2(type='submit', value='Rate it')
+          br
+          .tag
+            label.text Add a tag to this content!
+            form(name='tagButton', onsubmit='addtag(#{i}); return false;')
+              input(id=i + "tag", type='text', placeholder='Enter tags separated by commas')
+              br
+              input#pinID.button2(type='submit', value='Tag it')
+          br
+          .pin
+            label.text If you like it, just click the pin button!
+            form(name='pinButton', method='get', action='/renderPinPage')
+              input(type='hidden', name='pinobjectID', value=results[i].OBJECTID)
+              input(type='hidden', name='pinsourceID', value=results[i].SOURCEID)
+              input(type='hidden', name='url', value=results[i].URL)
+              input#pinID.button2(type='submit', value='Pin it')
+          p
+    .welcome2
+      label This is the Bing result for your search for: 
+      label#keyword #{keyword} 
+    div.bingBlock  
+      .newContentBlock
+        iframe(id="0bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="0label", method='get', action='/renderPinNewcontent')
+          input#0url(type='hidden', name='url')
+        br      
+      .newContentBlock
+        iframe(id="1bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="1label", method='get', action='/renderPinNewcontent')
+          input#1url(type='hidden', name='url')
+        br
+      .newContentBlock
+        iframe(id="2bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="2label", method='get', action='/renderPinNewcontent')
+          input#2url(type='hidden', name='url')
+        br        
+      .newContentBlock
+        iframe(id="3bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="3label", method='get', action='/renderPinNewcontent')
+          input#3url(type='hidden', name='url')
+        br        
+      .newContentBlock
+        iframe(id="4bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="4label", method='get', action='/renderPinNewcontent')
+          input#4url(type='hidden', name='url')
+        br          
+      .newContentBlock
+        iframe(id="5bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="5label", method='get', action='/renderPinNewcontent')
+          input#5url(type='hidden', name='url')
+        br
+      .newContentBlock
+        iframe(id="6bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="6label", method='get', action='/renderPinNewcontent')
+      .newContentBlock
+        iframe(id="7bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="7label", method='get', action='/renderPinNewcontent')
+          input#7url(type='hidden', name='url')
+        br        
+      .newContentBlock
+        iframe(id="8bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="8label", method='get', action='/renderPinNewcontent')
+          input#8url(type='hidden', name='url')
+        br      
+      .newContentBlock
+        iframe(id="9bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="9label", method='get', action='/renderPinNewcontent')
+          input#9url(type='hidden', name='url')
+        br
+      .newContentBlock
+        iframe(id="10bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="10label", method='get', action='/renderPinNewcontent')
+          input#10url(type='hidden', name='url')
+        br        
+      .newContentBlock
+        iframe(id="11bing", style="max-width:400px; max-height:300px")
+        br
+        form(id="11label", method='get', action='/renderPinNewcontent')
+          input#11url(type='hidden', name='url')
+        br        
+      script.
+        bingSearch(); 
+
+  
+          

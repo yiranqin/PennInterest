@@ -1,0 +1,32 @@
+!!! 5
+//if lt IE 7 
+  html.ie6.ielt8(lang='en')  
+//if IE 7 
+  html.ie7.ielt8(lang='en')  
+//if IE 8 
+  html.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='en')
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    title Paper Stack
+    link(rel='stylesheet', type='text/css', href='../stylesheets/mylogin.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/reset.js")
+  body
+    .container
+      section#content
+        form#resetform(name= 'reset')
+          h1 Reset Password
+          div
+            input#username(type='text', placeholder='Input your username here', required='required', name='login')
+          div
+            input#password(type='password', placeholder='Input your password here', required='required', name='oldpass')
+          div
+            input#newpassword(type='password', placeholder='Please enter a new password', required='required', name='newpass')
+          div
+            input(type='submit', value='Reset')
+        // form
+      // content
+    // container

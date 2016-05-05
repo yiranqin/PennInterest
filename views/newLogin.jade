@@ -1,0 +1,33 @@
+!!! 5
+//if lt IE 7 
+  html.ie6.ielt8(lang='en')  
+//if IE 7 
+  html.ie7.ielt8(lang='en')  
+//if IE 8 
+  html.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='en')
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    title Paper Stack
+    link(rel='stylesheet', type='text/css', href='../stylesheets/mylogin.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/pswdalert.js")
+  body
+    .container
+      section#content
+        form#loginform(name= 'login')
+          h1 Login
+          div
+            input#username(type='text', placeholder='Input your Username here', required='required', name="login")
+          div
+            input#password(type='password', placeholder='Input your Password here', required='required', name="pswd")
+          div
+            input(type='submit', value='Log in')
+        form(name= 'login' method='get', action='/renderReset')
+          div
+            input(type='submit', value='Reset Password')
+        // form
+      // content
+    // container

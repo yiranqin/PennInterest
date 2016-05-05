@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body {
+	background: url('../images/background.png') no-repeat;
+	color: #000;
+	font: 14px Arial;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+
+
+.container { 
+	margin: 25px auto; 
+	position: relative; 
+	width: 900px; 
+}
+
+#content {
+background: #f9f9f9;
+border: 1px solid #c4c6ca;
+margin: 69px 50px 16px 237px;
+padding: 25px 0 0;
+position: relative;
+text-align: center;
+text-shadow: 0 1px 0 #fff;
+width: 413px;
+height: 270px;
+}
+
+#content h1 {
+	color: #333300;
+	font: bold 35px Helvetica, Arial, sans-serif;
+	letter-spacing: -0.05em;
+	line-height: 20px;
+	margin: 10px 0 30px;
+}
+
+#content form { margin: 0 20px; position: relative }
+#content form input[type="text"],
+#content form input[type="password"] {
+	background: #eae7e7;
+	border: 1px solid #c8c8c8;
+	color: #777;
+	font: 13px Helvetica, Arial, sans-serif;
+	margin: 0 0 10px;
+	padding: 15px 10px 15px 40px;
+	width: 80%;
+}
+
+#username { background-position: 10px 10px !important }
+#password { background-position: 10px -53px !important }
+
+#content form input[type="submit"]  {
+background: #FFCCFF;
+border: 1px solid #AAA498;
+color: #242221;
+cursor: pointer;
+float: left;
+font: bold 15px Helvetica, Arial, sans-serif;
+height: 35px;
+margin: 20px 0 35px 29px;
+position: relative;
+width: 120px;
+background-color: #FF9999;
+}
+
+#content form input[type="reset"] {
+background: #46285e;
+border: 3px #8A8783;
+color: #454AC9;
+cursor: pointer;
+float: left;
+font: bold 15px Helvetica, Arial, sans-serif;
+height: 35px;
+margin: 20px 0 44px 80px;
+position: relative;
+width: 130px;
+background-color: #97ACB3;
+}

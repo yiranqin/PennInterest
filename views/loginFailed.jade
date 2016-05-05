@@ -1,0 +1,12 @@
+// Basic Jade specification for querying for an login
+// Inherits from layout 
+extend layout
+// Then we produce a form that triggers /login once
+// the user hits Submit
+block content
+  p
+   | #{title}:Login Failed
+          
+  // Put a click button that lets us return to the index page 
+  form(method='get', action='/')
+      input(type='submit', value='Return')

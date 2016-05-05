@@ -1,0 +1,43 @@
+!!! 5
+html
+  head
+    title Home Page
+    link(rel='stylesheet', type='text/css', href='../stylesheets/home.css')
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src="/javascripts/newcontent.js")
+  body
+    #redirect
+      form(id='redirect', method='get')
+        button#redir(type='submit', value='Home', formaction='/recommend') My Homepage
+        button#redir(type='submit', value='My Boards', formaction='/userBoards') My Boards
+    .holder
+      br
+      br
+    .welcome
+      label Welcome 
+      label#username #{user}
+      label ! 
+    .title1
+      label Pin this new content!
+    // Start of content block
+    .contentBlock
+      #imagecontainer
+      iframe(id='x', src=url)
+      input(id='url', type='hidden', value=url)
+      br
+      label Where do you want to pin the following object: 
+      br
+      .chooseBoard
+        form#pinform
+          input#objecttype(type='text', name='pinBoard', required='required', placeholder='Enter an object type here!')
+          br
+          - for (ind = 0; ind < boardresults.length; ind++)
+            input#board(type='radio', value=boardresults[ind].BOARDNAME, name='pinBoard')
+            | #{boardresults[ind].BOARDNAME}
+            br
+          input#pinContent(type='submit', value='Pin it!')
+          
+        
+
+
+
